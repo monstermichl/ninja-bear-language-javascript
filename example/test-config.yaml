@@ -1,7 +1,12 @@
 languages:
+  # --- JavaScript specific properties --------------------------------------
+  # export (optional): Specifies how to export the class (esm | common_js | none).
+  #                    Defaults to esm.
+  # -------------------------------------------------------------------------
   - language: ninja-bear-language-javascript
     file_naming: snake
     property_naming: pascal
+    export: esm
 
 properties:
   - type: bool
