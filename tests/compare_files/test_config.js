@@ -1,5 +1,3 @@
-// Generated with ninja-bear v1.0.0 (https://pypi.org/project/ninja-bear/).
-
 class TestConfig {
     static get MyBoolean() { return true; }
     static get MyInteger() { return 142; }
@@ -10,3 +8,4 @@ class TestConfig {
     static get MySubstitutedString() { return 'Sometimes I just want to scream Hello World!'; }
 }
 module.exports = TestConfig
+// Generated with ninja-bear v1.0.0 (https://pypi.org/project/ninja-bear/).
