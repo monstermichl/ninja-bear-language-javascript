@@ -15,9 +15,9 @@ setup(
         long_description_content_type='text/markdown',
         package_dir={'': 'src'},
         packages=find_packages(where='src'),
-        py_modules=['ninja_bear_language'],
+        py_modules=['ninja_bear_language_javascript'],
         entry_points = {
-            'ninja-bear-language-javascript': ['config=ninja_bear_language.config:Config']
+            'ninja-bear-language-javascript': ['config=ninja_bear_language_javascript.config:Config']
         },
         extras_require={
             'dev': [
