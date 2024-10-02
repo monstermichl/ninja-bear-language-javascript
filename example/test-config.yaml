@@ -6,7 +6,7 @@ languages:
   - language: ninja-bear-language-javascript
     file_naming: snake
     property_naming: pascal
-    export: esm
+    export: common_js
 
 properties:
   - type: bool

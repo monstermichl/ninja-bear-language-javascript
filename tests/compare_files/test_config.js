@@ -1,6 +1,6 @@
 // Generated with ninja-bear v1.0.0 (https://pypi.org/project/ninja-bear/).
 
-export class TestConfig {
+class TestConfig {
     static get MyBoolean() { return true; }
     static get MyInteger() { return 142; }
     static get MyFloat() { return 322.0; }
@@ -9,3 +9,4 @@ export class TestConfig {
     static get MyRegex() { return /Test Reg(E|e)x/; }
     static get MySubstitutedString() { return 'Sometimes I just want to scream Hello World!'; }
 }
+module.exports = TestConfig
