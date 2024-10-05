@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import List
-from ninja_bear import GeneratorBase, Property, PropertyType, NamingConventionType
+from ninja_bear import GeneratorBase, Property, PropertyType, NamingConventionType, DumpInfo
 from ninja_bear.base.generator_configuration import GeneratorConfiguration
 
 
@@ -33,15 +33,15 @@ class Generator(GeneratorBase):
     def _line_comment(self, string: str) -> str:
         return f'// {string}'
     
-    def _dump(self, type_name: str, properties: List[Property]) -> str:
+    def _dump(self, info: DumpInfo) -> str:
         # Export class only directly if ESM is used.
         code = 'export ' if self.export_type == ExportType.ESM else ''
 
         # Start type definition.
-        code += f'{self._type_start(type_name)}\n'
+        code += f'{self._type_start(info.type_name)}\n'
 
         # Create properties.
-        for property in properties:
+        for property in info.properties:
             type = property.type
 
             if type == PropertyType.BOOL:
@@ -55,8 +55,9 @@ class Generator(GeneratorBase):
                 value = f'/{property.value}/'  # Wrap in single quotes.
             else:
                 raise Exception('Unknown type')
-
-            code += f'{' ' * self._indent}{self._property(property.name, value)}\n'
+            
+            comment = f' {self._line_comment(property.comment)}' if property.comment else '' 
+            code += f'{' ' * info.indent}{self._property(property.name, value)}{comment}\n'
 
         # End type definition.
         code += self._type_end()
