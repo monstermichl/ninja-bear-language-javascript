@@ -57,7 +57,7 @@ class Generator(GeneratorBase):
                 raise Exception('Unknown type')
             
             comment = f' {self._line_comment(property.comment)}' if property.comment else '' 
-            code += f'{' ' * info.indent}{self._property(property.name, value)}{comment}\n'
+            code += f'{" " * info.indent}{self._property(property.name, value)}{comment}\n'
 
         # End type definition.
         code += self._type_end()
