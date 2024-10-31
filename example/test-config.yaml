@@ -3,7 +3,7 @@ languages:
   # Property description for ninja-bear-language-javascript.
   #
   # language        (required): ninja-bear-language-javascript or javascript
-  # export          (optional): Specifies how to export the config (common_js |
+  # export          (optional): Specifies how to export the config (common-js |
   #                             esm). Defaults to esm.
   # file_naming     (optional): Specifies the file naming convention (snake |
   #                             screaming_snake | camel | pascal | kebap).
@@ -20,7 +20,7 @@ languages:
   # ignore          (optional): If true, the section gets ignored.
   # -------------------------------------------------------------------------
   - language: ninja-bear-language-javascript
-    export: esm
+    export: common-js
     file_naming: snake
     property_naming: pascal
 

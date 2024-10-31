@@ -6,7 +6,7 @@ from ninja_bear.base.generator_configuration import GeneratorConfiguration
 
 class ExportType(str, Enum):
     ESM = 'esm'
-    COMMON_JS = 'common_js'
+    COMMON_JS = 'common-js'
     NONE = 'none'
 
 
