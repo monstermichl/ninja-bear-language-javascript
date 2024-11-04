@@ -1,6 +1,7 @@
 # ninja-bear-language-javascript
 This [ninja-bear](https://pypi.org/project/ninja-bear) plugin adds support for the JavaScript programming language.
 
+## Example configuration
 ```yaml
 languages:
   # -------------------------------------------------------------------------
@@ -62,4 +63,18 @@ properties:
   - type: string
     name: mySubstitutedString
     value: Sometimes I just want to scream ${myString}!  # To use the value of another property, simply use its name with ${}. E.g., ${myString}.
+```
+
+## Example output
+```javascript
+class TestConfig {
+    static get MyBoolean() { return true; }
+    static get MyInteger() { return 142; }
+    static get MyFloat() { return 322.0; }
+    static get MyCombinedFloat() { return 45724.0; }
+    static get MyDouble() { return 233.9; }
+    static get MyRegex() { return /Test Reg(E|e)x/; } // Just another RegEx.
+    static get MySubstitutedString() { return 'Sometimes I just want to scream Hello World!'; }
+}
+module.exports = TestConfig
 ```
